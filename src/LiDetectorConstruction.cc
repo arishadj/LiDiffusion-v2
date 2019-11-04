@@ -404,7 +404,7 @@ void LiDetectorConstruction::CreateSampleMaterial(std::vector<std::string> atoms
 {
   //user-defined sample material
   G4double d =atof(atoms[0].c_str());
-  G4int n = atoms.size();
+  G4int n = atoms.size()-1;
 
   G4Material* custom =new G4Material("customSampleMaterial",d*g/cm3, n/2);
   for(G4int i=1;i<n;i=i+2)
@@ -427,7 +427,7 @@ void LiDetectorConstruction::CreateSubstrateMaterial(std::vector<std::string> at
 {
   //user-defined substrate material
   G4double d =atof(atoms[0].c_str());
-  G4int n = atoms.size();
+  G4int n = atoms.size()-1;
 
   G4Material* custom =new G4Material("customSubstrateMaterial",d*g/cm3, n/2);
   for(G4int i=1;i<n;i=i+2)
